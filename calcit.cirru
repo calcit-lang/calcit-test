@@ -23,6 +23,7 @@
                         |j $ {} (:type :leaf) (:by |u0) (:at 1607011690336) (:text |deftest)
                         |r $ {} (:type :leaf) (:by |u0) (:at 1607011693963) (:text |testing)
                         |v $ {} (:type :leaf) (:by |u0) (:at 1607011694242) (:text |is)
+                        |x $ {} (:type :leaf) (:by |u0) (:at 1607065728180) (:text |*quit-on-failure?)
         :defs $ {}
           |main! $ {} (:type :expr) (:by |u0) (:at 1606310749711)
             :data $ {}
@@ -36,6 +37,12 @@
               |x $ {} (:type :expr) (:by |u0) (:at 1607011623746)
                 :data $ {}
                   |T $ {} (:type :leaf) (:by |u0) (:at 1607011625381) (:text |run-tests)
+              |w $ {} (:type :expr) (:by |u0) (:at 1607065732837)
+                :data $ {}
+                  |T $ {} (:type :leaf) (:by |u0) (:at 1607065735787) (:text |reset!)
+                  |j $ {} (:type :leaf) (:by |u0) (:at 1607065738496) (:text |*quit-on-failure?)
+                  |r $ {} (:type :leaf) (:by |u0) (:at 1607065778159) (:text |true)
+                  |D $ {} (:type :leaf) (:by |u0) (:at 1607065778628) (:text |;)
           |reload! $ {} (:type :expr) (:by |u0) (:at 1606310753106)
             :data $ {}
               |T $ {} (:type :leaf) (:by |u0) (:at 1606310753106) (:text |defn)
@@ -236,10 +243,24 @@
                                               |T $ {} (:type :leaf) (:by |u0) (:at 1607011599952) (:text |~)
                                               |j $ {} (:type :leaf) (:by |u0) (:at 1607011600844) (:text |expr)
                                   |D $ {} (:type :leaf) (:by |u0) (:at 1607012470661) (:text |do)
-                                  |j $ {} (:type :expr) (:by |u0) (:at 1607012471450)
+                                  |j $ {} (:type :expr) (:by |u0) (:at 1607065680870)
                                     :data $ {}
-                                      |T $ {} (:type :leaf) (:by |u0) (:at 1607012472713) (:text |quit)
-                                      |j $ {} (:type :leaf) (:by |u0) (:at 1607012473000) (:text |1)
+                                      |T $ {} (:type :expr) (:by |u0) (:at 1607065750806)
+                                        :data $ {}
+                                          |T $ {} (:type :expr) (:by |u0) (:at 1607012471450)
+                                            :data $ {}
+                                              |T $ {} (:type :leaf) (:by |u0) (:at 1607012472713) (:text |quit)
+                                              |j $ {} (:type :leaf) (:by |u0) (:at 1607012473000) (:text |1)
+                                          |D $ {} (:type :leaf) (:by |u0) (:at 1607065751592) (:text |do)
+                                          |L $ {} (:type :expr) (:by |u0) (:at 1607065753843)
+                                            :data $ {}
+                                              |T $ {} (:type :leaf) (:by |u0) (:at 1607065754376) (:text |echo)
+                                              |j $ {} (:type :leaf) (:by |u0) (:at 1607065761021) (:text "|\"Quit on failure.")
+                                      |D $ {} (:type :leaf) (:by |u0) (:at 1607065681383) (:text |if)
+                                      |L $ {} (:type :expr) (:by |u0) (:at 1607065681847)
+                                        :data $ {}
+                                          |T $ {} (:type :leaf) (:by |u0) (:at 1607065683639) (:text |deref)
+                                          |j $ {} (:type :leaf) (:by |u0) (:at 1607065686608) (:text |*quit-on-failure?)
                           |D $ {} (:type :leaf) (:by |u0) (:at 1607011856661) (:text |&let)
                           |L $ {} (:type :expr) (:by |u0) (:at 1607011841861)
                             :data $ {}
@@ -251,6 +272,11 @@
                                 :data $ {}
                                   |T $ {} (:type :leaf) (:by |u0) (:at 1607011852924) (:text |~)
                                   |j $ {} (:type :leaf) (:by |u0) (:at 1607011853766) (:text |expr)
+          |*quit-on-failure? $ {} (:type :expr) (:by |u0) (:at 1607065653911)
+            :data $ {}
+              |T $ {} (:type :leaf) (:by |u0) (:at 1607065659922) (:text |defatom)
+              |j $ {} (:type :leaf) (:by |u0) (:at 1607065653911) (:text |*quit-on-failure?)
+              |r $ {} (:type :leaf) (:by |u0) (:at 1607065663143) (:text |false)
         :proc $ {} (:type :expr) (:by |u0) (:at 1607011341315) (:data $ {})
         :configs $ {}
   :configs $ {} (:extension |.cljs) (:output |src) (:port 6001) (:local-ui? false) (:compact-output? true) (:init-fn |calcit-test.main/main!) (:reload-fn |calcit-test.main/reload!) (:modules $ [])

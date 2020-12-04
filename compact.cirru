@@ -4,10 +4,10 @@
   :files $ {}
     |calcit-test.main $ {}
       :ns $ quote
-        ns calcit-test.main $ :require ([] calcit-test.core :refer $ [] deftest testing is)
+        ns calcit-test.main $ :require ([] calcit-test.core :refer $ [] deftest testing is *quit-on-failure?)
       :defs $ {}
         |main! $ quote
-          defn main! () (echo "\"Started") (run-tests)
+          defn main! () (echo "\"Started") (; reset! *quit-on-failure? true) (run-tests)
         |reload! $ quote
           defn reload! () (echo "\"loaded") (run-tests)
         |on-error $ quote
@@ -41,6 +41,8 @@
                 if (~ v) (echo "\"Passed.")
                   do
                     echo "\"Failed:" $ quote (~ expr)
-                    quit 1
+                    if (deref *quit-on-failure?)
+                      do (echo "\"Quit on failure.") (quit 1)
+        |*quit-on-failure? $ quote (defatom *quit-on-failure? false)
       :proc $ quote ()
       :configs $ {}
