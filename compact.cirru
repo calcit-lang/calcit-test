@@ -7,7 +7,9 @@
         ns calcit-test.main $ :require ([] calcit-test.core :refer $ [] deftest testing is *quit-on-failure?)
       :defs $ {}
         |main! $ quote
-          defn main! () (echo "\"Started") (; reset! *quit-on-failure? true) (run-tests)
+          defn main! () (echo "\"Started")
+            do (echo "\"disabled quiting code for demonstration...") (; reset! *quit-on-failure? true)
+            run-tests
         |reload! $ quote
           defn reload! () (echo "\"loaded") (run-tests)
         |on-error $ quote
@@ -52,11 +54,11 @@
                       ~ expr
                     if (~ v) (; echo "\"Passed.")
                       do (echo)
-                        echo "\"Failed:" $ quote (~ expr)
+                        echo "\"Failed:" (quote $ ~ expr) (, "\"   <---------=")
                         echo (quote $ ~ a) (, "\"=>") (~ a)
                         echo (quote $ ~ b) (, "\"=>") (~ b)
                         if (deref *quit-on-failure?)
-                          do (echo "\"Quit on failure.") (quit 1)
+                          do (echo) (echo "\"Quit on failure.") (quit 1)
                 quote-replace $ &let
                     ~ v
                     ~ expr
@@ -64,7 +66,7 @@
                     do (echo)
                       echo "\"Failed:" (quote $ ~ expr) (, "\"   <---------=")
                       if (deref *quit-on-failure?)
-                        do (echo "\"Quit on failure.") (quit 1)
+                        do (echo) (echo "\"Quit on failure.") (quit 1)
         |*quit-on-failure? $ quote (defatom *quit-on-failure? false)
       :proc $ quote ()
       :configs $ {}
