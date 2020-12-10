@@ -37,12 +37,19 @@
               |x $ {} (:type :expr) (:by |u0) (:at 1607011623746)
                 :data $ {}
                   |T $ {} (:type :leaf) (:by |u0) (:at 1607011625381) (:text |run-tests)
-              |w $ {} (:type :expr) (:by |u0) (:at 1607065732837)
+              |w $ {} (:type :expr) (:by |u0) (:at 1607530723049)
                 :data $ {}
-                  |T $ {} (:type :leaf) (:by |u0) (:at 1607065735787) (:text |reset!)
-                  |j $ {} (:type :leaf) (:by |u0) (:at 1607065738496) (:text |*quit-on-failure?)
-                  |r $ {} (:type :leaf) (:by |u0) (:at 1607065778159) (:text |true)
-                  |D $ {} (:type :leaf) (:by |u0) (:at 1607065778628) (:text |;)
+                  |T $ {} (:type :expr) (:by |u0) (:at 1607065732837)
+                    :data $ {}
+                      |T $ {} (:type :leaf) (:by |u0) (:at 1607065735787) (:text |reset!)
+                      |j $ {} (:type :leaf) (:by |u0) (:at 1607065738496) (:text |*quit-on-failure?)
+                      |r $ {} (:type :leaf) (:by |u0) (:at 1607065778159) (:text |true)
+                      |D $ {} (:type :leaf) (:by |u0) (:at 1607530712782) (:text |;)
+                  |D $ {} (:type :leaf) (:by |u0) (:at 1607530724677) (:text |do)
+                  |L $ {} (:type :expr) (:by |u0) (:at 1607530725374)
+                    :data $ {}
+                      |T $ {} (:type :leaf) (:by |u0) (:at 1607530727659) (:text |echo)
+                      |j $ {} (:type :leaf) (:by |u0) (:at 1607530746047) (:text "|\"disabled quiting code for demonstration...")
           |reload! $ {} (:type :expr) (:by |u0) (:at 1606310753106)
             :data $ {}
               |T $ {} (:type :leaf) (:by |u0) (:at 1606310753106) (:text |defn)
@@ -341,6 +348,9 @@
                                                 :data $ {}
                                                   |T $ {} (:type :leaf) (:by |u0) (:at 1607065754376) (:text |echo)
                                                   |j $ {} (:type :leaf) (:by |u0) (:at 1607065761021) (:text "|\"Quit on failure.")
+                                              |H $ {} (:type :expr) (:by |u0) (:at 1607530563939)
+                                                :data $ {}
+                                                  |T $ {} (:type :leaf) (:by |u0) (:at 1607530563939) (:text |echo)
                                           |D $ {} (:type :leaf) (:by |u0) (:at 1607065681383) (:text |if)
                                           |L $ {} (:type :expr) (:by |u0) (:at 1607065681847)
                                             :data $ {}
@@ -409,6 +419,7 @@
                                                     :data $ {}
                                                       |T $ {} (:type :leaf) (:by |u0) (:at 1607078346699) (:text |~)
                                                       |j $ {} (:type :leaf) (:by |u0) (:at 1607078346699) (:text |expr)
+                                              |v $ {} (:type :leaf) (:by |u0) (:at 1607530533439) (:text "|\"   <---------=")
                                           |y $ {} (:type :expr) (:by |u0) (:at 1607078346699)
                                             :data $ {}
                                               |T $ {} (:type :leaf) (:by |u0) (:at 1607078346699) (:text |if)
@@ -427,6 +438,9 @@
                                                     :data $ {}
                                                       |T $ {} (:type :leaf) (:by |u0) (:at 1607078346699) (:text |quit)
                                                       |j $ {} (:type :leaf) (:by |u0) (:at 1607078346699) (:text |1)
+                                                  |b $ {} (:type :expr) (:by |u0) (:at 1607530560182)
+                                                    :data $ {}
+                                                      |T $ {} (:type :leaf) (:by |u0) (:at 1607530561202) (:text |echo)
                                           |u $ {} (:type :expr) (:by |u0) (:at 1607078365905)
                                             :data $ {}
                                               |T $ {} (:type :leaf) (:by |u0) (:at 1607078366450) (:text |echo)
