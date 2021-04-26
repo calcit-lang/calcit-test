@@ -507,5 +507,12 @@
         :proc $ {} (:type :expr) (:by |u0) (:at 1607011341315)
           :data $ {}
         :configs $ {}
-  :configs $ {} (:extension |.cljs) (:output |src) (:port 6001) (:local-ui? false) (:compact-output? true) (:init-fn |calcit-test.main/main!) (:reload-fn |calcit-test.main/reload!)
+  :configs $ {} (:reload-fn |calcit-test.main/reload!)
     :modules $ []
+    :output |src
+    :port 6001
+    :extension |.cljs
+    :local-ui? false
+    :init-fn |calcit-test.main/main!
+    :compact-output? true
+    :version |0.0.2
