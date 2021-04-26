@@ -1,0 +1,17 @@
+{
+  "name": "@calcit/test",
+  "version": "0.0.2",
+  "description": "Test polyfills for Calcit",
+  "main": "index.js",
+  "repository": "git@github.com:calcit-lang/calcit-test.git",
+  "author": "jiyinyiyong <jiyinyiyong@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@calcit/procs": "^0.3.0-a3"
+  },
+  "devDependencies": {
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0"
+  }
+}
