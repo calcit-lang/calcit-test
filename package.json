@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@calcit/procs": "^0.4.0-a1"
+    "@calcit/procs": "^0.4.0-a2"
   },
   "devDependencies": {
     "webpack": "^5.38.1",
