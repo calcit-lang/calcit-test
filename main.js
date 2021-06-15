@@ -1,4 +1,4 @@
 
-import { main_BANG_ } from "./js-out/calcit-test.main.js"
+import { main_$x_ } from "./js-out/calcit-test.main.js"
 
-main_BANG_()
+main_$x_()

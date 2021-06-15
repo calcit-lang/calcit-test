@@ -2,7 +2,7 @@
 {} (:package |calcit-test)
   :configs $ {} (:init-fn |calcit-test.main/main!) (:reload-fn |calcit-test.main/reload!)
     :modules $ []
-    :version |0.0.2
+    :version |0.0.3
   :files $ {}
     |calcit-test.main $ {}
       :ns $ quote
@@ -34,7 +34,7 @@
       :defs $ {}
         |deftest $ quote
           defmacro deftest (name & body)
-            quote-replace $ defn (~ name) () (echo)
+            quasiquote $ defn (~ name) () (echo)
               echo $ str "\"Test: "
                 quote $ ~ name
               ~@ body
@@ -42,7 +42,7 @@
           defmacro testing (message & body)
             &let
               size $ count body
-              quote-replace $ do (echo)
+              quasiquote $ do (echo)
                 echo $ str "\"" (~ message) "\": has " (~ size) "\" tests"
                 ~@ body
         |is $ quote
@@ -56,7 +56,7 @@
                 let
                     a $ get expr 1
                     b $ get expr 2
-                  quote-replace $ &let
+                  quasiquote $ &let
                       ~ v
                       ~ expr
                     if (~ v) nil $ do (echo)
@@ -70,8 +70,8 @@
                         format-to-lisp $ quote (~ b)
                         , "\"=>" $ ~ b
                       if (deref *quit-on-failure?)
-                        do (echo) (echo "\"Quit on failure.") (quit 1)
-                quote-replace $ &let
+                        do (echo) (echo "\"Quit on failure.") (quit! 1)
+                quasiquote $ &let
                     ~ v
                     ~ expr
                   if (~ v) nil $ do (echo)
@@ -79,7 +79,7 @@
                       format-to-lisp $ quote (~ expr)
                       , "\"   <---------="
                     if (deref *quit-on-failure?)
-                      do (echo) (echo "\"Quit on failure.") (quit 1)
+                      do (echo) (echo "\"Quit on failure.") (quit! 1)
         |*quit-on-failure? $ quote (defatom *quit-on-failure? false)
       :proc $ quote ()
       :configs $ {}

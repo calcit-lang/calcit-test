@@ -45,7 +45,7 @@
                       |T $ {} (:type :leaf) (:by |u0) (:at 1607065735787) (:text |reset!)
                       |j $ {} (:type :leaf) (:by |u0) (:at 1607065738496) (:text |*quit-on-failure?)
                       |r $ {} (:type :leaf) (:by |u0) (:at 1607065778159) (:text |true)
-                      |D $ {} (:type :leaf) (:by |u0) (:at 1619426071280) (:text |;)
+                      |D $ {} (:type :leaf) (:by |u0) (:at 1623689875561) (:text |;)
                   |D $ {} (:type :leaf) (:by |u0) (:at 1607530724677) (:text |do)
                   |L $ {} (:type :expr) (:by |u0) (:at 1607530725374)
                     :data $ {}
@@ -181,7 +181,7 @@
                   |b $ {} (:type :leaf) (:by |u0) (:at 1607011363983) (:text |&)
               |v $ {} (:type :expr) (:by |u0) (:at 1607011366311)
                 :data $ {}
-                  |T $ {} (:type :leaf) (:by |u0) (:at 1607011371486) (:text |quote-replace)
+                  |T $ {} (:type :leaf) (:by |u0) (:at 1623689848090) (:text |quasiquote)
                   |j $ {} (:type :expr) (:by |u0) (:at 1607012162820)
                     :data $ {}
                       |T $ {} (:type :leaf) (:by |u0) (:at 1607012162820) (:text |defn)
@@ -225,7 +225,7 @@
                 :data $ {}
                   |T $ {} (:type :expr) (:by |u0) (:at 1607011432102)
                     :data $ {}
-                      |T $ {} (:type :leaf) (:by |u0) (:at 1607011438971) (:text |quote-replace)
+                      |T $ {} (:type :leaf) (:by |u0) (:at 1623689852042) (:text |quasiquote)
                       |j $ {} (:type :expr) (:by |u0) (:at 1607011439771)
                         :data $ {}
                           |T $ {} (:type :leaf) (:by |u0) (:at 1607011440196) (:text |do)
@@ -310,7 +310,7 @@
                     :data $ {}
                       |T $ {} (:type :expr) (:by |u0) (:at 1607011548019)
                         :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1607011550487) (:text |quote-replace)
+                          |T $ {} (:type :leaf) (:by |u0) (:at 1623689843229) (:text |quasiquote)
                           |j $ {} (:type :expr) (:by |u0) (:at 1607011839970)
                             :data $ {}
                               |T $ {} (:type :expr) (:by |u0) (:at 1607011550812)
@@ -344,7 +344,7 @@
                                             :data $ {}
                                               |T $ {} (:type :expr) (:by |u0) (:at 1607012471450)
                                                 :data $ {}
-                                                  |T $ {} (:type :leaf) (:by |u0) (:at 1607012472713) (:text |quit)
+                                                  |T $ {} (:type :leaf) (:by |u0) (:at 1623689840625) (:text |quit!)
                                                   |j $ {} (:type :leaf) (:by |u0) (:at 1607012473000) (:text |1)
                                               |D $ {} (:type :leaf) (:by |u0) (:at 1607065751592) (:text |do)
                                               |L $ {} (:type :expr) (:by |u0) (:at 1607065753843)
@@ -380,7 +380,7 @@
                         :data $ {}
                           |T $ {} (:type :expr) (:by |u0) (:at 1607078346699)
                             :data $ {}
-                              |T $ {} (:type :leaf) (:by |u0) (:at 1607078346699) (:text |quote-replace)
+                              |T $ {} (:type :leaf) (:by |u0) (:at 1623689836142) (:text |quasiquote)
                               |j $ {} (:type :expr) (:by |u0) (:at 1607078346699)
                                 :data $ {}
                                   |T $ {} (:type :leaf) (:by |u0) (:at 1607078346699) (:text |&let)
@@ -438,7 +438,7 @@
                                                       |j $ {} (:type :leaf) (:by |u0) (:at 1607078346699) (:text "|\"Quit on failure.")
                                                   |r $ {} (:type :expr) (:by |u0) (:at 1607078346699)
                                                     :data $ {}
-                                                      |T $ {} (:type :leaf) (:by |u0) (:at 1607078346699) (:text |quit)
+                                                      |T $ {} (:type :leaf) (:by |u0) (:at 1623689839186) (:text |quit!)
                                                       |j $ {} (:type :leaf) (:by |u0) (:at 1607078346699) (:text |1)
                                                   |b $ {} (:type :expr) (:by |u0) (:at 1607530560182)
                                                     :data $ {}
@@ -515,4 +515,4 @@
     :local-ui? false
     :init-fn |calcit-test.main/main!
     :compact-output? true
-    :version |0.0.2
+    :version |0.0.3
