@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@calcit/procs": "^0.6.0"
+    "@calcit/procs": "^0.7.0-a2"
   },
   "devDependencies": {}
 }
