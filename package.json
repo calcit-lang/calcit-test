@@ -1,6 +1,6 @@
 {
   "name": "@calcit/test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Test polyfills for Calcit",
   "main": "index.js",
   "repository": "git@github.com:calcit-lang/calcit-test.git",
