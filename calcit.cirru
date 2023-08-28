@@ -1,20 +1,18 @@
 
 {} (:package |calcit-test)
-  :configs $ {} (:compact-output? true) (:extension |.cljs) (:init-fn |calcit-test.main/main!) (:local-ui? false) (:output |src) (:port 6001) (:reload-fn |calcit-test.main/reload!) (:version |0.0.4)
+  :configs $ {} (:compact-output? true) (:extension |.cljs) (:init-fn |calcit-test.main/main!) (:local-ui? false) (:output |src) (:port 6001) (:reload-fn |calcit-test.main/reload!) (:version |0.0.5)
     :modules $ []
   :entries $ {}
   :files $ {}
-    |calcit-test.core $ {}
-      :configs $ {}
+    |calcit-test.core $ %{} :FileEntry
       :defs $ {}
-        |*quit-on-failure? $ %{} :CodeEntry
+        |*quit-on-failure? $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1607065653911) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1607065659922) (:by |u0) (:text |defatom)
               |j $ %{} :Leaf (:at 1607065653911) (:by |u0) (:text |*quit-on-failure?)
               |r $ %{} :Leaf (:at 1607065663143) (:by |u0) (:text |false)
-          :doc |
-        |deftest $ %{} :CodeEntry
+        |deftest $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1607011350747) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1607011435360) (:by |u0) (:text |defmacro)
@@ -57,8 +55,7 @@
                         :data $ {}
                           |T $ %{} :Leaf (:at 1607012162820) (:by |u0) (:text |~@)
                           |j $ %{} :Leaf (:at 1607012162820) (:by |u0) (:text |body)
-          :doc |
-        |is $ %{} :CodeEntry
+        |is $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1607011355964) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1607011471006) (:by |u0) (:text |defmacro)
@@ -297,8 +294,7 @@
                                                 :data $ {}
                                                   |T $ %{} :Leaf (:at 1623689840625) (:by |u0) (:text |quit!)
                                                   |j $ %{} :Leaf (:at 1607012473000) (:by |u0) (:text |1)
-          :doc |
-        |testing $ %{} :CodeEntry
+        |testing $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1607011353369) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1607011440767) (:by |u0) (:text |defmacro)
@@ -348,17 +344,14 @@
                             :data $ {}
                               |T $ %{} :Leaf (:at 1607011453095) (:by |u0) (:text |~@)
                               |j $ %{} :Leaf (:at 1607011454179) (:by |u0) (:text |body)
-          :doc |
-      :ns $ %{} :CodeEntry
+      :ns $ %{} :CodeEntry (:doc |)
         :code $ %{} :Expr (:at 1607011341315) (:by |u0)
           :data $ {}
             |T $ %{} :Leaf (:at 1607011341315) (:by |u0) (:text |ns)
             |j $ %{} :Leaf (:at 1607011341315) (:by |u0) (:text |calcit-test.core)
-        :doc |
-    |calcit-test.main $ {}
-      :configs $ {} (:extension nil)
+    |calcit-test.main $ %{} :FileEntry
       :defs $ {}
-        |main! $ %{} :CodeEntry
+        |main! $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1606310749711) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1606310749711) (:by |u0) (:text |defn)
@@ -385,8 +378,7 @@
               |x $ %{} :Expr (:at 1607011623746) (:by |u0)
                 :data $ {}
                   |T $ %{} :Leaf (:at 1607011625381) (:by |u0) (:text |run-tests)
-          :doc |
-        |on-error $ %{} :CodeEntry
+        |on-error $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1606310757107) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1606310757107) (:by |u0) (:text |defn)
@@ -399,8 +391,7 @@
                   |T $ %{} :Leaf (:at 1607011187419) (:by |u0) (:text |echo)
                   |j $ %{} :Leaf (:at 1607011737424) (:by |u0) (:text "|\"has error:")
                   |r $ %{} :Leaf (:at 1607011738962) (:by |u0) (:text |message)
-          :doc |
-        |reload! $ %{} :CodeEntry
+        |reload! $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1606310753106) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1606310753106) (:by |u0) (:text |defn)
@@ -414,8 +405,7 @@
               |x $ %{} :Expr (:at 1607011631233) (:by |u0)
                 :data $ {}
                   |T $ %{} :Leaf (:at 1607011631510) (:by |u0) (:text |run-tests)
-          :doc |
-        |run-tests $ %{} :CodeEntry
+        |run-tests $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1607011632269) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1607011633966) (:by |u0) (:text |defn)
@@ -429,8 +419,7 @@
               |x $ %{} :Expr (:at 1607011645125) (:by |u0)
                 :data $ {}
                   |T $ %{} :Leaf (:at 1607011654710) (:by |u0) (:text |test-add)
-          :doc |
-        |test-add $ %{} :CodeEntry
+        |test-add $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1607011655618) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1607011659075) (:by |u0) (:text |deftest)
@@ -503,8 +492,7 @@
                           |T $ %{} :Leaf (:at 1607078467730) (:by |u0) (:text |>)
                           |j $ %{} :Leaf (:at 1607078473213) (:by |u0) (:text |1)
                           |r $ %{} :Leaf (:at 1607078473884) (:by |u0) (:text |2)
-          :doc |
-      :ns $ %{} :CodeEntry
+      :ns $ %{} :CodeEntry (:doc |)
         :code $ %{} :Expr (:at 1606310745262) (:by |u0)
           :data $ {}
             |T $ %{} :Leaf (:at 1606310745262) (:by |u0) (:text |ns)
@@ -524,20 +512,18 @@
                         |r $ %{} :Leaf (:at 1607011693963) (:by |u0) (:text |testing)
                         |v $ %{} :Leaf (:at 1607011694242) (:by |u0) (:text |is)
                         |x $ %{} :Leaf (:at 1607065728180) (:by |u0) (:text |*quit-on-failure?)
-        :doc |
   :ir $ {} (:package |calcit-test)
     :files $ {}
       |calcit-test.core $ {}
         :configs $ {}
         :defs $ {}
-          |*quit-on-failure? $ %{} :CodeEntry
+          |*quit-on-failure? $ %{} :CodeEntry (:doc |)
             :code $ %{} :Expr (:at 1607065653911) (:by |u0)
               :data $ {}
                 |T $ %{} :Leaf (:at 1607065659922) (:by |u0) (:text |defatom)
                 |j $ %{} :Leaf (:at 1607065653911) (:by |u0) (:text |*quit-on-failure?)
                 |r $ %{} :Leaf (:at 1607065663143) (:by |u0) (:text |false)
-            :doc |
-          |deftest $ %{} :CodeEntry
+          |deftest $ %{} :CodeEntry (:doc |)
             :code $ %{} :Expr (:at 1607011350747) (:by |u0)
               :data $ {}
                 |T $ %{} :Leaf (:at 1607011435360) (:by |u0) (:text |defmacro)
@@ -580,8 +566,7 @@
                           :data $ {}
                             |T $ %{} :Leaf (:at 1607012162820) (:by |u0) (:text |~@)
                             |j $ %{} :Leaf (:at 1607012162820) (:by |u0) (:text |body)
-            :doc |
-          |is $ %{} :CodeEntry
+          |is $ %{} :CodeEntry (:doc |)
             :code $ %{} :Expr (:at 1607011355964) (:by |u0)
               :data $ {}
                 |T $ %{} :Leaf (:at 1607011471006) (:by |u0) (:text |defmacro)
@@ -820,8 +805,7 @@
                                                   :data $ {}
                                                     |T $ %{} :Leaf (:at 1623689840625) (:by |u0) (:text |quit!)
                                                     |j $ %{} :Leaf (:at 1607012473000) (:by |u0) (:text |1)
-            :doc |
-          |testing $ %{} :CodeEntry
+          |testing $ %{} :CodeEntry (:doc |)
             :code $ %{} :Expr (:at 1607011353369) (:by |u0)
               :data $ {}
                 |T $ %{} :Leaf (:at 1607011440767) (:by |u0) (:text |defmacro)
@@ -871,17 +855,15 @@
                               :data $ {}
                                 |T $ %{} :Leaf (:at 1607011453095) (:by |u0) (:text |~@)
                                 |j $ %{} :Leaf (:at 1607011454179) (:by |u0) (:text |body)
-            :doc |
-        :ns $ %{} :CodeEntry
+        :ns $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1607011341315) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1607011341315) (:by |u0) (:text |ns)
               |j $ %{} :Leaf (:at 1607011341315) (:by |u0) (:text |calcit-test.core)
-          :doc |
       |calcit-test.main $ {}
         :configs $ {} (:extension nil)
         :defs $ {}
-          |main! $ %{} :CodeEntry
+          |main! $ %{} :CodeEntry (:doc |)
             :code $ %{} :Expr (:at 1606310749711) (:by |u0)
               :data $ {}
                 |T $ %{} :Leaf (:at 1606310749711) (:by |u0) (:text |defn)
@@ -908,8 +890,7 @@
                 |x $ %{} :Expr (:at 1607011623746) (:by |u0)
                   :data $ {}
                     |T $ %{} :Leaf (:at 1607011625381) (:by |u0) (:text |run-tests)
-            :doc |
-          |on-error $ %{} :CodeEntry
+          |on-error $ %{} :CodeEntry (:doc |)
             :code $ %{} :Expr (:at 1606310757107) (:by |u0)
               :data $ {}
                 |T $ %{} :Leaf (:at 1606310757107) (:by |u0) (:text |defn)
@@ -922,8 +903,7 @@
                     |T $ %{} :Leaf (:at 1607011187419) (:by |u0) (:text |echo)
                     |j $ %{} :Leaf (:at 1607011737424) (:by |u0) (:text "|\"has error:")
                     |r $ %{} :Leaf (:at 1607011738962) (:by |u0) (:text |message)
-            :doc |
-          |reload! $ %{} :CodeEntry
+          |reload! $ %{} :CodeEntry (:doc |)
             :code $ %{} :Expr (:at 1606310753106) (:by |u0)
               :data $ {}
                 |T $ %{} :Leaf (:at 1606310753106) (:by |u0) (:text |defn)
@@ -937,8 +917,7 @@
                 |x $ %{} :Expr (:at 1607011631233) (:by |u0)
                   :data $ {}
                     |T $ %{} :Leaf (:at 1607011631510) (:by |u0) (:text |run-tests)
-            :doc |
-          |run-tests $ %{} :CodeEntry
+          |run-tests $ %{} :CodeEntry (:doc |)
             :code $ %{} :Expr (:at 1607011632269) (:by |u0)
               :data $ {}
                 |T $ %{} :Leaf (:at 1607011633966) (:by |u0) (:text |defn)
@@ -952,8 +931,7 @@
                 |x $ %{} :Expr (:at 1607011645125) (:by |u0)
                   :data $ {}
                     |T $ %{} :Leaf (:at 1607011654710) (:by |u0) (:text |test-add)
-            :doc |
-          |test-add $ %{} :CodeEntry
+          |test-add $ %{} :CodeEntry (:doc |)
             :code $ %{} :Expr (:at 1607011655618) (:by |u0)
               :data $ {}
                 |T $ %{} :Leaf (:at 1607011659075) (:by |u0) (:text |deftest)
@@ -1026,8 +1004,7 @@
                             |T $ %{} :Leaf (:at 1607078467730) (:by |u0) (:text |>)
                             |j $ %{} :Leaf (:at 1607078473213) (:by |u0) (:text |1)
                             |r $ %{} :Leaf (:at 1607078473884) (:by |u0) (:text |2)
-            :doc |
-        :ns $ %{} :CodeEntry
+        :ns $ %{} :CodeEntry (:doc |)
           :code $ %{} :Expr (:at 1606310745262) (:by |u0)
             :data $ {}
               |T $ %{} :Leaf (:at 1606310745262) (:by |u0) (:text |ns)
@@ -1047,6 +1024,5 @@
                           |r $ %{} :Leaf (:at 1607011693963) (:by |u0) (:text |testing)
                           |v $ %{} :Leaf (:at 1607011694242) (:by |u0) (:text |is)
                           |x $ %{} :Leaf (:at 1607065728180) (:by |u0) (:text |*quit-on-failure?)
-          :doc |
   :users $ {}
     |u0 $ {} (:avatar nil) (:id |u0) (:name |chen) (:nickname |chen) (:password |d41d8cd98f00b204e9800998ecf8427e) (:theme :star-trail)

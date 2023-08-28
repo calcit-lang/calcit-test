@@ -1,23 +1,21 @@
 
 {} (:package |calcit-test)
-  :configs $ {} (:init-fn |calcit-test.main/main!) (:reload-fn |calcit-test.main/reload!) (:version |0.0.4)
+  :configs $ {} (:init-fn |calcit-test.main/main!) (:reload-fn |calcit-test.main/reload!) (:version |0.0.5)
     :modules $ []
   :entries $ {}
   :files $ {}
-    |calcit-test.core $ {}
+    |calcit-test.core $ %{} :FileEntry
       :defs $ {}
-        |*quit-on-failure? $ %{} :CodeEntry
+        |*quit-on-failure? $ %{} :CodeEntry (:doc |)
           :code $ quote (defatom *quit-on-failure? false)
-          :doc |
-        |deftest $ %{} :CodeEntry
+        |deftest $ %{} :CodeEntry (:doc |)
           :code $ quote
             defmacro deftest (name & body)
               quasiquote $ defn (~ name) () (echo)
                 echo $ str "\"Test: "
                   quote $ ~ name
                 ~@ body
-          :doc |
-        |is $ %{} :CodeEntry
+        |is $ %{} :CodeEntry (:doc |)
           :code $ quote
             defmacro is (expr)
               let
@@ -53,8 +51,7 @@
                         , "\"   <---------="
                       if (deref *quit-on-failure?)
                         do (echo) (echo "\"Quit on failure.") (quit! 1)
-          :doc |
-        |testing $ %{} :CodeEntry
+        |testing $ %{} :CodeEntry (:doc |)
           :code $ quote
             defmacro testing (message & body)
               &let
@@ -62,31 +59,25 @@
                 quasiquote $ do (echo)
                   echo $ str "\"" (~ message) "\": has " (~ size) "\" tests"
                   ~@ body
-          :doc |
-      :ns $ %{} :CodeEntry
+      :ns $ %{} :CodeEntry (:doc |)
         :code $ quote (ns calcit-test.core)
-        :doc |
-    |calcit-test.main $ {}
+    |calcit-test.main $ %{} :FileEntry
       :defs $ {}
-        |main! $ %{} :CodeEntry
+        |main! $ %{} :CodeEntry (:doc |)
           :code $ quote
             defn main! () (echo "\"Started")
               do (echo "\"disabled quiting code for demonstration...") (; reset! *quit-on-failure? true)
               run-tests
-          :doc |
-        |on-error $ %{} :CodeEntry
+        |on-error $ %{} :CodeEntry (:doc |)
           :code $ quote
             defn on-error (message) (echo "\"has error:" message)
-          :doc |
-        |reload! $ %{} :CodeEntry
+        |reload! $ %{} :CodeEntry (:doc |)
           :code $ quote
             defn reload! () (echo "\"loaded") (run-tests)
-          :doc |
-        |run-tests $ %{} :CodeEntry
+        |run-tests $ %{} :CodeEntry (:doc |)
           :code $ quote
             defn run-tests () (echo "\"running tests") (test-add)
-          :doc |
-        |test-add $ %{} :CodeEntry
+        |test-add $ %{} :CodeEntry (:doc |)
           :code $ quote
             deftest test-add $ testing "\"add 2"
               is $ = 2 (+ 1 1)
@@ -95,9 +86,7 @@
               is $ = 2 (+ 2 3)
               is $ > 2 1
               is $ > 1 2
-          :doc |
-      :ns $ %{} :CodeEntry
+      :ns $ %{} :CodeEntry (:doc |)
         :code $ quote
           ns calcit-test.main $ :require
             [] calcit-test.core :refer $ [] deftest testing is *quit-on-failure?
-        :doc |
