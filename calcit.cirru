@@ -92,7 +92,7 @@
         |main! $ %{} 'CodeEntry (:doc |)
           :code $ quote
             defn main! () (echo |Started)
-              do (echo "|disabled quiting code for demonstration...") (; reset! *quit-on-failure? true)
+              do (echo "|disabled quitting code for demonstration...") (; reset! *quit-on-failure? true)
               run-tests
           :examples $ []
           :schema $ :: 'Dynamic

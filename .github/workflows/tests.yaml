@@ -17,6 +17,12 @@ jobs:
         node-version: 24
         cache: 'yarn'
 
+    - name: Enable Corepack
+      run: |
+        corepack enable
+        corepack prepare yarn@4.12.0 --activate
+        yarn --version
+
     - uses: calcit-lang/setup-cr@0.0.9
 
     - name: Validate Calcit snapshot and type baseline
@@ -30,9 +36,9 @@ jobs:
         cr calcit.cirru analyze deprecated --summary-only --format json
 
     - name: "test"
-      run: env=ci cr calcit.cirru
+      run: env=ci cr -1 calcit.cirru
 
     - name: "test js"
       run: >
         cr calcit.cirru js
-        && yarn && node main.mjs
+        && yarn install --immutable && node main.mjs
