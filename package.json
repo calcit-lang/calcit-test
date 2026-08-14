@@ -5,9 +5,8 @@
   "repository": "git@github.com:calcit-lang/calcit-test.git",
   "author": "jiyinyiyong <jiyinyiyong@gmail.com>",
   "license": "MIT",
-  "private": false,
+  "packageManager": "yarn@4.12.0",
   "dependencies": {
-    "@calcit/procs": "^0.10.4"
-  },
-  "devDependencies": {}
+    "@calcit/procs": "^0.13.15"
+  }
 }

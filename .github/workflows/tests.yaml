@@ -10,19 +10,34 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v6
       with:
-        node-version: 18
-        cache: 'yarn'
+        node-version: 24
 
-    - uses: calcit-lang/setup-cr@0.0.8
+    - name: Enable Corepack
+      run: |
+        corepack enable
+        corepack prepare yarn@4.12.0 --activate
+        yarn --version
+
+    - uses: calcit-lang/setup-cr@0.0.9
+
+    - name: Validate Calcit snapshot and type baseline
+      run: |
+        caps --ci
+        cr calcit.cirru edit format
+        git diff --exit-code -- calcit.cirru
+        cr calcit.cirru --check-only
+        cr calcit.cirru analyze check-types --summary-only --format json
+        cr calcit.cirru analyze weak-types --only schema-dynamic,code-dynamic --intent unresolved --summary-only --format json
+        cr calcit.cirru analyze deprecated --summary-only --format json
 
     - name: "test"
-      run: env=ci cr -1
+      run: env=ci cr calcit.cirru
 
     - name: "test js"
       run: >
-        cr -1 js
-        && yarn && node main.mjs
+        cr calcit.cirru js
+        && yarn install --immutable && node main.mjs
