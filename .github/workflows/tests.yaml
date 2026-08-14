@@ -35,7 +35,7 @@ jobs:
         cr calcit.cirru analyze deprecated --summary-only --format json
 
     - name: "test"
-      run: env=ci cr -1 calcit.cirru
+      run: env=ci cr calcit.cirru
 
     - name: "test js"
       run: >
