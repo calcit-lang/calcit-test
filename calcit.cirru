@@ -12,7 +12,7 @@
           :examples $ []
             quote $ reset! *quit-on-failure? true
             quote $ reset! *quit-on-failure? false
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Ref 'Bool
         |deftest $ %{} 'CodeEntry (:doc "|Define a test function. Creates a function with the given name that prints the test name and executes the test body.")
           :code $ quote
             defmacro deftest (name & body)
@@ -25,7 +25,9 @@
               is $ = 3 (+ 1 2)
             quote $ deftest test-strings
               is $ = |hello (str |hel |lo)
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Macro
+            {} (:rest 'Dynamic)
+              :args $ [] 'Dynamic
         |is $ %{} 'CodeEntry (:doc "|Assert that an expression evaluates to true. For equality tests (= a b), displays both values on failure. Respects *quit-on-failure? setting.")
           :code $ quote
             defmacro is (expr)
@@ -68,7 +70,8 @@
             quote $ is (> 5 3)
             quote $ is
               contains? ([] 1 2 3) 2
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Macro
+            {} $ :args ([] 'Dynamic)
         |testing $ %{} 'CodeEntry (:doc "|Group related tests with a descriptive message. Prints the message and number of tests in the group.")
           :code $ quote
             defmacro testing (message & body)
@@ -84,7 +87,9 @@
             quote $ testing |String tests
               is $ = |hello |hello
               is $ = 5 (count |hello)
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Macro
+            {} (:rest 'Dynamic)
+              :args $ [] 'Dynamic
       :ns $ %{} 'NsEntry (:doc |)
         :code $ quote (ns calcit-test.core)
     |calcit-test.main $ %{} 'FileEntry
@@ -95,22 +100,30 @@
               do (echo "|disabled quitting code for demonstration...") (; reset! *quit-on-failure? true)
               run-tests
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
         |on-error $ %{} 'CodeEntry (:doc |)
           :code $ quote
             defn on-error (message) (echo "|has error:" message)
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ [] 'Dynamic
         |reload! $ %{} 'CodeEntry (:doc |)
           :code $ quote
             defn reload! () (echo |loaded) (run-tests)
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
         |run-tests $ %{} 'CodeEntry (:doc |)
           :code $ quote
             defn run-tests () (echo "|running tests") (test-add)
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
         |test-add $ %{} 'CodeEntry (:doc |)
           :code $ quote
             deftest test-add $ testing "|add 2"
@@ -121,7 +134,9 @@
               is $ > 2 1
               is $ > 1 2
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
       :ns $ %{} 'NsEntry (:doc |)
         :code $ quote
           ns calcit-test.main $ :require
