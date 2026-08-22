@@ -40,7 +40,7 @@ ns app.main
     calcit.test :refer $ is is= is-not= is-throws fail
 ```
 
-Remove `@calcit/test` from `package.json` and the external module from `deps.cirru`. For normal project testing, use `cr calcit.cirru --entry test` (or your configured test entry).
+Remove `@calcit/test` from `package.json` and the external module from `deps.cirru`. For normal project testing, use `calcit calcit.cirru --entry test` (or your configured test entry).
 
 ### Historical workflow
 
