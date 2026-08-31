@@ -1,7 +1,14 @@
+# calcit-test (archived / 已归档)
 
-> **Deprecated:** This package is no longer maintained. New Calcit projects should use the built-in [`calcit.test`](https://github.com/calcit-lang/calcit/blob/main/calcit/test.cirru) tools (`is`, `is=`, `is-not=`, `is-throws`, and `fail`) instead. The built-in tools are versioned with Calcit and support its current type system.
-
-# calcit-test (deprecated)
+> [!IMPORTANT]
+> **Archived at `0.0.7`.** This package is no longer maintained. New and existing
+> Calcit projects should use the built-in
+> [`calcit.test`](https://github.com/calcit-lang/calcit/blob/main/calcit/test.cirru)
+> tools (`is`, `is=`, `is-not=`, `is-throws`, and `fail`) instead. The built-in
+> tools are versioned with Calcit and support its current type system.
+>
+> **本仓库冻结于 `0.0.7` 并归档。** 新旧项目都应迁移到内建 `calcit.test`；
+> 不再为 Calcit、npm 依赖或 Actions 的后续版本更新本仓库。
 
 Tiny tests for older Calcit Runner projects.
 
@@ -41,6 +48,9 @@ ns app.main
 ```
 
 Remove `@calcit/test` from `package.json` and the external module from `deps.cirru`. For normal project testing, use `calcit calcit.cirru --entry test` (or your configured test entry).
+
+Existing tags and source remain readable for legacy builds. Pin the final tag while
+migrating; do not depend on `main`.
 
 ### Historical workflow
 

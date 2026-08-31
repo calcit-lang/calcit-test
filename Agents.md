@@ -1,5 +1,9 @@
 # Calcit Agent 指南
 
+本仓库已冻结于 `0.0.7` 并归档。禁止例行 Calcit、`@calcit/procs`、Actions 或格式升级；
+测试能力由 Calcit core 的 `calcit.test` 维护。仅在明确授权修正文档归档信息或发布关键安全
+公告时恢复仓库。
+
 本项目使用 canonical `calcit.cirru` 作为源码快照，不再维护 `compact.cirru`。
 
 开始查询或修改前，先读取当前 CLI 指南：
